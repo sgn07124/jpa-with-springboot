@@ -15,13 +15,12 @@ public class JpaMain {
         //code
         try {
 
-            // 영속
+            Member member = new Member();
+            member.setUsername("C");
 
-            Member member = new Member(200L, "member200");
+            System.out.println("=========================");
             em.persist(member);
-
-            em.flush();  // INSERT 쿼리가 바로 실행됨
-
+            System.out.println("member.id = " + member.getId());
             System.out.println("=========================");
 
             tx.commit();
